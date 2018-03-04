@@ -2,6 +2,7 @@
   "name": "survey-react",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
     "start": "react-scripts start",
@@ -26,7 +27,6 @@
     "react": "16.2.0",
     "react-dom": "^16.2.0",
     "react-native": "0.52.0",
-    "react-native-webview-autoheight": "^1.0.4",
     "react-redux": "^5.0.7",
     "redux": "^3.7.2",
     "teaset": "^0.5.5"

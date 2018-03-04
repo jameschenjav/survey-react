@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 import {
@@ -8,7 +8,7 @@ import {
   ListItem,
 } from 'native-base';
 import TCheckbox from 'teaset/components/Checkbox/Checkbox';
-import WebView from 'react-native-webview-autoheight';
+import { WebView } from 'react-native';
 
 const Checkbox = ({ label, value, onChange }) => (
   <TCheckbox
@@ -43,11 +43,57 @@ TextField.propTypes = {
   onChange: PropTypes.func.isRequired,
 };
 
-const Caption = ({ html }) => (
-  <WebView
-    source={{ html }}
-  />
-);
+const HTML = `
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  font-family: Roboto;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  font-size: 60px;
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  document.title = document.getElementsByTagName('html')[0].scrollHeight;
+  window.location.hash = 'ready';
+});
+</script>
+</head>
+<body>
+#{html}
+</body>
+</html>`;
+
+class Caption extends PureComponent {
+  state = { height: 40 }
+
+  onWebViewChanged(e) {
+    if (e.url.endsWith('ready')) {
+      this.setState(() => ({
+        height: e.title | 0,
+      }));
+    }
+  }
+
+  render() {
+    return (
+      <WebView
+        javaScriptEnabled
+        javaScriptEnabledAndroid
+        style={{ height: this.state.height }}
+        source={{ html: HTML.replace('#{html}', this.props.html) }}
+        onNavigationStateChange={e => this.onWebViewChanged(e)}
+      />
+    );
+  }
+}
 
 Caption.propTypes = {
   html: PropTypes.string.isRequired,

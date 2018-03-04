@@ -26,7 +26,6 @@ class App extends React.Component {
 
   render() {
     if (this.state.loading) {
-      console.log('loading');
       return (
         <Root>
           <AppLoading />

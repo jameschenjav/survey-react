@@ -43,6 +43,7 @@ module.exports = {
     ],
     "max-len": 0,
     "newline-per-chained-call": 0,
+    "no-bitwise": 0,
     "no-confusing-arrow": 0,
     "no-console": 1,
     "no-use-before-define": 0,
