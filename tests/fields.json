@@ -1,0 +1,62 @@
+{
+  "fields": [
+    {
+      "type": "checkbox",
+      "name": "cb1",
+      "label": "Test Checkbox 1",
+      "widths": { "md6": true }
+    },
+    {
+      "type": "checkbox",
+      "name": "cb2",
+      "label": "Test Checkbox 2",
+      "value": true,
+      "widths": { "md6": true },
+      "when": {
+        "fn": "field",
+        "key": "cb1"
+      }
+    },
+    {
+      "type": "checkbox",
+      "name": "cb3",
+      "label": "Test Checkbox 3",
+      "when": {
+        "fn": "all",
+        "args": [
+          {
+            "fn": "field",
+            "key": "cb1"
+          },
+          {
+            "fn": "field",
+            "key": "cb2"
+          }
+        ]
+      }
+    },
+    {
+      "type": "caption",
+      "html": "Test Text"
+    },
+    {
+      "type": "checkbox",
+      "name": "cb4",
+      "label": "Test Checkbox 4",
+      "value": true
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "text",
+      "name": "email",
+      "label": "Email",
+      "required": true
+    },
+    {
+      "type": "caption",
+      "html": "<h1>Custom HTML</h1>"
+    }
+  ]
+}

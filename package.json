@@ -1,0 +1,50 @@
+{
+  "name": "survey-react",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "rn-start": "react-native-scripts start",
+    "rn-eject": "react-native-scripts eject",
+    "clear": "watchman watch-del-all && react-native-scripts start --reset-cache",
+    "android": "react-native-scripts android",
+    "ios": "react-native-scripts ios",
+    "test-rn": "node node_modules/jest/bin/jest.js",
+    "json-test": "http-server ./tests --cors -p 3080"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
+    "expo": "^25.0.0",
+    "lodash": "^4.17.5",
+    "material-ui": "^1.0.0-beta.35",
+    "native-base": "^2.3.9",
+    "react": "16.2.0",
+    "react-dom": "^16.2.0",
+    "react-native": "0.52.0",
+    "react-native-webview-autoheight": "^1.0.4",
+    "react-redux": "^5.0.7",
+    "redux": "^3.7.2",
+    "teaset": "^0.5.5"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.2",
+    "eslint": "^4.18.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-import-resolver-webpack": "^0.8.4",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "http-server": "^0.11.1",
+    "react-native-scripts": "1.11.1",
+    "react-scripts": "^1.1.1",
+    "react-test-renderer": "16.2.0"
+  }
+}
